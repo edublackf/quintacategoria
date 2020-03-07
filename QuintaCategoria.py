@@ -1,0 +1,28 @@
+men=int(input('Ingrese sueldo del trabajador: '))
+mes=int(input('Ingrese mes de inicio del trabajador: '))
+gra=int(input('Ingrese cantidad de remuneraciones por la empresa: '))
+extra=int(input('Ingrese cantidad extra: '))
+mesfaltante=13-mes
+grati=men*gra
+brutaanual= men*mesfaltante+grati+extra
+print ("Remuneracion Bruta Anual: ",brutaanual)
+uit=4300
+baseimponible= brutaanual - 7 * uit
+print("La base imponible es: ",baseimponible)
+if baseimponible <=0:
+    anualproyectado=0
+    print("No paga impuesto")
+elif baseimponible>0 and baseimponible<=5*uit :
+     anualproyectado=baseimponible*0.08
+elif baseimponible >5*uit and baseimponible<=20*uit:
+    anualproyectado=baseimponible*0.14
+elif baseimponible >20*uit and baseimponible<=35*uit:
+    anualproyectado=baseimponible*0.17
+elif baseimponible >35*uit and baseimponible<=45*uit:
+    anualproyectado=baseimponible*0.20
+else: anualproyectado=baseimponible*0.30
+print("Impuesto Anual Proyectado: ",anualproyectado)
+descuentoxmes=anualproyectado/mesfaltante
+print("Cada mes se descontará: ",round(descuentoxmes))
+
+
